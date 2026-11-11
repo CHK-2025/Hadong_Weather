@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>하동 비행 브리핑 2026-10-23</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .cape-bar { display:flex; gap:2px; height:20px; border-radius:6px; overflow:hidden; margin-top:6px; }
+    .cape-seg { flex:1; display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#fff; opacity:.45; transition:opacity .2s; }
+    .cape-seg.active { opacity:1; }
+    .cape-stable   { background:#16a34a; }
+    .cape-unstable { background:#d97706; }
+    .cape-danger   { background:#ea580c; }
+    .cape-nogo     { background:#dc2626; }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <div class="max-w-2xl mx-auto px-4 py-8">
+
+    <!-- 헤더 -->
+    <div class="mb-6">
+      <h1 class="text-2xl font-bold text-gray-800">📊 하동 비행 브리핑</h1>
+      <p class="text-gray-500 text-sm mt-1">2026-10-23 · 생성: 2026-10-23 08:26 UTC</p>
+    </div>
+
+    <!-- 실시간 기상 현황 (METAR + 태양고도 + 형제봉) -->
+    
+    
+    
+    
+    <div class="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-4">
+      <h2 class="font-semibold text-blue-800 mb-3 text-sm">🛰️ 실시간 기상 현황 · 17:36 KST</h2>
+      <div class="grid grid-cols-3 gap-3 text-sm">
+
+        <!-- 형제봉 -->
+        <div class="bg-white rounded-lg p-3 border border-blue-100">
+          <div class="text-xs text-blue-500 font-semibold mb-1">🏔️ 하동 형제봉 AWS (1091m)</div>
+          
+          <div class="font-bold text-gray-800 text-base">11.6°C <span class="text-xs text-gray-400">/ 2m: 10.5°C</span></div>
+          <div class="text-gray-600">
+            E 5.9 m/s
+            <span class="text-orange-500">/ 돌풍 7.1</span>
+          </div>
+          <div class="text-gray-500 text-xs mt-1">습도 87.0% · 기압 898.5 hPa</div>
+          <div class="text-gray-400 text-xs">NIFOS 산악기상 · 2026-10-23 17:30</div>
+          
+        </div>
+
+        <!-- METAR (사천공항) -->
+        <div class="bg-white rounded-lg p-3 border border-blue-100">
+          <div class="text-xs text-blue-500 font-semibold mb-1">✈️ 여수공항 METAR (RKNY)</div>
+          
+          <div class="font-bold text-gray-800 text-base">16°C / 12°C</div>
+          <div class="text-gray-600">
+            90°
+            1.5 m/s
+            
+          </div>
+          <div class="text-gray-500 text-xs mt-1">QNH 1021 hPa · 시정 11.1 km</div>
+          
+        </div>
+
+        <!-- 태양고도 / 비행 시간대 -->
+        <div class="bg-white rounded-lg p-3 border border-blue-100">
+          <div class="text-xs text-blue-500 font-semibold mb-1">☀️ 비행 가능 시간대</div>
+          
+          <div class="font-bold text-gray-800 text-sm">
+            10:00 ~ 14:30
+          </div>
+          <div class="text-gray-600 text-xs">서멀 발생 (고도≥30°)</div>
+          <div class="text-green-700 text-xs font-medium mt-1">
+            최적 11:00~13:30
+          </div>
+          <div class="text-gray-500 text-xs">일출 06:41 / 최고각 43.5°</div>
+          
+        </div>
+
+      </div>
+    </div>
+    
+
+    <!-- 비행 신호등 -->
+    
+    <div class="bg-red-100 border border-red-400 rounded-xl p-4 mb-6 flex items-center gap-3">
+      <span class="text-3xl">🔴</span>
+      <div><div class="font-bold text-red-800 text-lg">비행 불가</div><div class="text-red-700 text-sm">thermal 2800m</div></div>
+    </div>
+    
+
+    <!-- CAPE 4단계 표시기 -->
+    <div class="bg-white rounded-xl shadow-sm p-5 mb-4">
+      <h2 class="font-semibold text-gray-700 mb-1">⚡ 대기 안정도 (CAPE)</h2>
+      <div class="text-sm text-gray-500 mb-1">
+        850 J/kg &nbsp;·&nbsp;
+        <strong class="text-red-700">
+          B
+        </strong>
+      </div>
+      <div class="cape-bar">
+        <div class="cape-seg cape-stable  ">안정</div>
+        <div class="cape-seg cape-unstable active">불안</div>
+        <div class="cape-seg cape-danger  ">위험</div>
+        <div class="cape-seg cape-nogo    ">불가</div>
+      </div>
+      <div class="flex justify-between text-xs text-gray-400 mt-1 px-0.5">
+        <span>&lt;300</span><span>300–999</span><span>1000–2499</span><span>≥2500 J/kg</span>
+      </div>
+    </div>
+
+    <!-- 서멀 조건 -->
+    <div class="bg-white rounded-xl shadow-sm p-5 mb-4">
+      <h2 class="font-semibold text-gray-700 mb-3">🌡️ 서멀 조건</h2>
+      <table class="w-full text-sm">
+        <tr class="border-b"><td class="py-1 text-gray-500">시작 고도 (LCL)</td><td class="py-1 font-medium">1200 m</td></tr>
+        <tr class="border-b">
+          <td class="py-1 text-gray-500">상한 고도</td>
+          <td class="py-1 font-medium">
+            2800 m
+            
+          </td>
+        </tr>
+        <tr class="border-b"><td class="py-1 text-gray-500">서멀 강도</td><td class="py-1 font-medium">normal</td></tr>
+        <tr><td class="py-1 text-gray-500">트리거 온도</td><td class="py-1 font-medium">22°C</td></tr>
+      </table>
+    </div>
+
+    <!-- 역전층 (있을 때 강조 표시) -->
+    
+
+    <!-- 고도별 바람 (m/s) -->
+    <div class="bg-white rounded-xl shadow-sm p-5 mb-4">
+      <h2 class="font-semibold text-gray-700 mb-3">💨 고도별 바람</h2>
+      <table class="w-full text-sm">
+        
+        <tr class="border-b"><td class="py-1 text-gray-500">지표</td><td class="py-1 font-medium">SW 4.1 m/s</td></tr>
+        <tr class="border-b"><td class="py-1 text-gray-500">1,000 m</td><td class="py-1 font-medium">W 6.2 m/s</td></tr>
+        <tr class="border-b"><td class="py-1 text-gray-500">2,000 m</td><td class="py-1 font-medium">W 7.7 m/s</td></tr>
+        <tr><td class="py-1 text-gray-500">시어 위험도</td><td class="py-1 font-medium">low</td></tr>
+      </table>
+    </div>
+
+    <!-- XC 팁 -->
+    
+    <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 mb-4">
+      <h2 class="font-semibold text-blue-800 mb-2">🧭 XC 비행 팁</h2>
+      <ul class="text-sm text-blue-700 space-y-1">
+        <li>• SW tip</li>
+      </ul>
+    </div>
+    
+
+    <!-- 경고 -->
+    
+
+    <!-- 유사 사례 -->
+    
+
+    <!-- 전문가 해석 -->
+    <div class="bg-white rounded-xl shadow-sm p-5 mb-4">
+      <h2 class="font-semibold text-gray-700 mb-2">📝 전문가 분석</h2>
+      <p class="text-sm text-gray-600">test</p>
+    </div>
+
+    <!-- 액션 버튼 -->
+    <div class="flex gap-3 mb-6 flex-wrap">
+    </div>
+
+    <p class="text-center text-gray-400 text-xs mt-2">하동 행글라이딩 클럽 · 브리핑 ID: 1</p>
+  </div>
+</body>
+</html>

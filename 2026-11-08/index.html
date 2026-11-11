@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>하동 비행 브리핑 2026-11-08</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .cape-bar { display:flex; gap:2px; height:20px; border-radius:6px; overflow:hidden; margin-top:6px; }
+    .cape-seg { flex:1; display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#fff; opacity:.45; transition:opacity .2s; }
+    .cape-seg.active { opacity:1; }
+    .cape-stable   { background:#16a34a; }
+    .cape-unstable { background:#d97706; }
+    .cape-danger   { background:#ea580c; }
+    .cape-nogo     { background:#dc2626; }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <div class="max-w-2xl mx-auto px-4 py-8">
+
+    <!-- 헤더 -->
+    <div class="mb-6">
+      <h1 class="text-2xl font-bold text-gray-800">📊 하동 비행 브리핑</h1>
+      <p class="text-gray-500 text-sm mt-1">2026-11-08 · 생성: 2026-11-08 00:33 UTC</p>
+    </div>
+
+    <!-- 정보 기준 안내 -->
+    <div class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 mb-4 text-xs text-gray-500 space-y-1">
+      <div class="flex flex-wrap gap-x-4 gap-y-1">
+        <span>📡 <strong class="text-gray-600">고층기상 예측</strong> — 창원 WMO 47155 · 00UTC(09:00 KST) 사운딩</span>
+        <span>🏔️ <strong class="text-gray-600">이륙장 실황</strong> — NIFOS 형제봉 AWS · 브리핑 생성 시점</span>
+        <span>✈️ <strong class="text-gray-600">METAR</strong> — RKPK 김해국제공항(하동에서 약 115km) · 참고용, 등급 판단에 쓰지 않음</span>
+      </div>
+      <div class="text-gray-400">※ 본 브리핑은 예측 정보입니다. 실제 기상과 차이가 있을 수 있으며, 출발 전 실황을 반드시 확인하세요.</div>
+    </div>
+
+    <!-- 실황 확인 배너 (실시간 데이터는 별도 페이지) -->
+    <a href="https://mtweather.nifos.go.kr/" target="_blank" rel="noopener"
+       class="flex items-center justify-between bg-blue-50 border border-blue-200 rounded-xl px-4 py-3 mb-4 hover:bg-blue-100 transition-colors no-underline">
+      <div>
+        <div class="font-semibold text-blue-800 text-sm">🛰️ 실시간 기상 현황 확인</div>
+        <div class="text-xs text-blue-600 mt-0.5">산림청 산악기상정보시스템에서 형제봉 실황 확인 → 출발 전 최종 확인</div>
+      </div>
+      <span class="text-blue-400 text-lg">›</span>
+    </a>
+
+    <!-- 이륙장 기상 현황 -->
+    
+    <div class="bg-white rounded-xl shadow-sm p-5 mb-4">
+      <h2 class="font-semibold text-gray-700 mb-3">📍 이륙장 현황</h2>
+      <div class="grid grid-cols-2 gap-3">
+        <!-- 형제봉 -->
+        <div class="bg-gray-50 rounded-lg p-3">
+          <div class="font-medium text-gray-700 text-sm mb-2">🏔️ 형제봉 (1,091m)</div>
+          
+          <div class="text-xs space-y-1">
+            <div class="flex justify-between"><span class="text-gray-400">풍향</span><span class="font-semibold text-gray-700">ESE</span></div>
+            <div class="flex justify-between"><span class="text-gray-400">풍속</span><span class="font-semibold text-gray-700">5.4 m/s</span></div>
+            <div class="flex justify-between"><span class="text-gray-400">돌풍</span><span class="font-semibold text-orange-600">7.4 m/s</span></div>
+            <div class="flex justify-between"><span class="text-gray-400">기온</span><span class="font-semibold text-gray-700">5.4°C</span></div>
+          </div>
+          
+        </div>
+        <!-- 구재봉 -->
+        <div class="bg-gray-50 rounded-lg p-3">
+          <div class="font-medium text-gray-700 text-sm mb-2">🏔️ 구재봉 (835m)</div>
+          
+          <div class="text-xs space-y-1">
+            <div class="flex justify-between"><span class="text-gray-400">풍향</span><span class="font-semibold text-gray-600">ESE</span></div>
+            <div class="flex justify-between"><span class="text-gray-400">풍속</span><span class="font-semibold text-gray-600">5.4 m/s</span></div>
+            <div class="flex justify-between"><span class="text-gray-400">돌풍</span><span class="font-semibold text-orange-500">7.4 m/s</span></div>
+          </div>
+          <div class="text-xs text-gray-400 mt-1.5">※ 형제봉 AWS 참조</div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Skew-T 이미지 (자동 분석 시 표시) -->
+    
+    <div class="bg-white rounded-xl shadow-sm p-4 mb-4">
+      <div class="flex items-center justify-between mb-2">
+        <div class="font-semibold text-gray-700 text-sm">📈 Skew-T 고층기상 차트 (창원 WMO 47155)</div>
+        <a href="2026-11-08_00UTC_47155.png" target="_blank"
+           class="text-xs text-blue-500 hover:underline">원본 크게 보기 ↗</a>
+      </div>
+      <img src="2026-11-08_00UTC_47155.png" alt="Skew-T 차트 2026-11-08"
+           class="w-full rounded-lg border border-gray-100"
+           style="max-height:420px; object-fit:contain;">
+      <div class="text-xs text-gray-400 mt-1.5">00UTC (09:00 KST) · 자동 생성 · 빨강=기온, 초록=이슬점, 음영=CAPE/CIN</div>
+    </div>
+    
+
+    <!-- 비행 신호등 -->
+    
+    <div class="bg-yellow-100 border border-yellow-400 rounded-xl p-4 mb-6 flex items-center gap-3">
+      <span class="text-3xl">🟡</span>
+      <div><div class="font-bold text-yellow-800 text-lg">주의 요망</div><div class="text-yellow-700 text-sm">써멀 1411m, 약 / 지표풍 NNE 1.9m/s / CAPE 안정</div></div>
+    </div>
+    
+
+    <!-- CAPE 4단계 표시기 -->
+    <div class="bg-white rounded-xl shadow-sm p-5 mb-4">
+      <h2 class="font-semibold text-gray-700 mb-1">⚡ 대기 안정도 (CAPE)</h2>
+      <div class="text-sm text-gray-500 mb-1">
+        0 J/kg &nbsp;·&nbsp;
+        <strong class="text-green-700">
+          안정
+        </strong>
+      </div>
+      <div class="cape-bar">
+        <div class="cape-seg cape-stable  active">안정</div>
+        <div class="cape-seg cape-unstable">불안</div>
+        <div class="cape-seg cape-danger  ">위험</div>
+        <div class="cape-seg cape-nogo    ">불가</div>
+      </div>
+      <div class="flex justify-between text-xs text-gray-400 mt-1 px-0.5">
+        <span>&lt;300</span><span>300–999</span><span>1000–2499</span><span>≥2500 J/kg</span>
+      </div>
+    </div>
+
+    <!-- 서멀 조건 -->
+    <div class="bg-white rounded-xl shadow-sm p-5 mb-4">
+      <h2 class="font-semibold text-gray-700 mb-3">🌡️ 써멀 조건</h2>
+      <table class="w-full text-sm">
+        <tr class="border-b"><td class="py-1 text-gray-500">시작 고도 (LCL)</td><td class="py-1 font-medium">1176 m</td></tr>
+        <tr class="border-b">
+          <td class="py-1 text-gray-500">상한 고도</td>
+          <td class="py-1 font-medium">
+            1411 m
+            
+          </td>
+        </tr>
+        <tr class="border-b"><td class="py-1 text-gray-500">써멀 강도</td><td class="py-1 font-medium">약</td></tr>
+        <tr><td class="py-1 text-gray-500">트리거 온도</td><td class="py-1 font-medium">None°C</td></tr>
+      </table>
+    </div>
+
+    <!-- 역전층 (있을 때 강조 표시) -->
+    
+    <div class="bg-orange-50 border border-orange-300 rounded-xl p-4 mb-4">
+      <div class="font-semibold text-orange-700 mb-1">🌁 역전층</div>
+      <div class="flex gap-6 text-sm">
+        <div><span class="text-orange-600">시작 (하단)</span> <strong>322 m</strong></div>
+        <div><span class="text-orange-600">상단</span> <strong>327 m</strong></div>
+      </div>
+      <p class="text-xs text-orange-500 mt-1">역전층 이하 강한 써멀 예상 — 역전층 돌파 후 갑작스러운 상승 약화 대비</p>
+    </div>
+    
+
+    <!-- 고도별 바람 (m/s) -->
+    <div class="bg-white rounded-xl shadow-sm p-5 mb-4">
+      <h2 class="font-semibold text-gray-700 mb-3">💨 고도별 바람</h2>
+      <table class="w-full text-sm">
+        
+        <tr class="border-b"><td class="py-1 text-gray-500">지표</td><td class="py-1 font-medium">NNE 1.9 m/s</td></tr>
+        <tr class="border-b"><td class="py-1 text-gray-500">1,000 m</td><td class="py-1 font-medium">ESE 3.0 m/s</td></tr>
+        <tr class="border-b"><td class="py-1 text-gray-500">2,000 m</td><td class="py-1 font-medium">SW 2.1 m/s</td></tr>
+        <tr><td class="py-1 text-gray-500">시어 위험도</td><td class="py-1 font-medium">높음</td></tr>
+      </table>
+    </div>
+
+    <!-- XC 팁 -->
+    
+    <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 mb-4">
+      <h2 class="font-semibold text-blue-800 mb-2">🧭 XC 비행 팁</h2>
+      <ul class="text-sm text-blue-700 space-y-1">
+        <li>• 북풍 조건: 형제봉 북사면 활용. 남향 사면 밀리는 바람 주의.</li><li>• CAPE 낮음: 써멀 약해 큰 XC는 어렵습니다. 능선 비행 위주 권장.</li><li>• 역전층 322m: 역전층 이하 강한 써멀 예상. 역전층 돌파 후 갑작스러운 약화 대비.</li><li>• 윈드시어 높음: 고도 전환 구간에서 돌풍 대비, 여유 있는 진입각 유지.</li><li>• 하동 해풍: 통상 오후 1~2시 진입. 해풍 전선 통과 시 고도 유지 후 착륙 결정.</li>
+      </ul>
+    </div>
+    
+
+    <!-- 경고 -->
+    
+    <div class="bg-white rounded-xl shadow-sm p-5 mb-4">
+      <h2 class="font-semibold text-gray-700 mb-2">⚠️ 주의사항</h2>
+      <ul class="text-sm text-gray-600 space-y-1">
+        <li>• 역전층 322m ~ 327m — 써멀 억제 가능</li><li>• 고도별 바람시어 위험 — 지표~2000m 풍향 차이 크게 다름</li>
+      </ul>
+    </div>
+    
+
+    <!-- 유사 사례 -->
+    
+    <div class="bg-white rounded-xl shadow-sm p-5 mb-4">
+      <h2 class="font-semibold text-gray-700 mb-2">📁 유사 과거 사례</h2>
+      <ul class="text-sm text-gray-600 space-y-1">
+        
+        <li>• 2026-11-06 (양호) — 실제 도달 ?m</li>
+        
+        <li>• 2026-11-02 (양호) — 실제 도달 ?m</li>
+        
+        <li>• 2026-10-29 (주의) — 실제 도달 ?m</li>
+        
+      </ul>
+    </div>
+    
+
+    <!-- 전문가 해석 -->
+    <div class="bg-white rounded-xl shadow-sm p-5 mb-4">
+      <h2 class="font-semibold text-gray-700 mb-2">📝 전문가 분석</h2>
+      <p class="text-sm text-gray-600">창원 WMO 47155 고층기상 자동분석 | 2026-11-08 00UTC(09:00 KST)
+CAPE 0 J/kg | CIN 0 | LI 27.7 | K-index -12.9
+써멀 상한 추정 1411m | 운저(LCL) 1176m, 0°C 고도 3104m</p>
+    </div>
+
+    <!-- 액션 버튼 -->
+    <div class="flex gap-3 mb-6 flex-wrap">
+    </div>
+
+    <p class="text-center text-gray-400 text-xs mt-2">하동 행글라이딩 클럽 · 브리핑 ID: 5</p>
+  </div>
+</body>
+</html>
